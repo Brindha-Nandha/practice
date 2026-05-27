@@ -1,0 +1,20 @@
+package com.google.gmail;
+
+import java.io.IOException;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class DataDrivenReadExcel {
+
+
+	public static void main(String[] args) throws IOException {
+		XSSFWorkbook workbook = new XSSFWorkbook(System.getProperty("user.dir")+"\\Excel\\Data.xlsx");
+		XSSFSheet sheet = workbook.getSheet("Sheet1");
+		int lastCellNum = sheet.getRow(0).getLastCellNum();
+		int lastRowNum = sheet.getLastRowNum();
+		System.out.println(lastCellNum + " " + lastRowNum);
+		
+	}
+
+}

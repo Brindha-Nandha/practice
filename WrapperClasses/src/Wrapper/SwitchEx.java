@@ -1,0 +1,22 @@
+package Wrapper;
+
+public class SwitchEx {
+
+	public static void main(String[] args) {
+		int input=1;
+		switch(input) {
+		case 1:
+			System.out.println("This is 1");
+			
+		case 2:
+			System.out.println("This is 2");
+			
+		
+			
+			default: 
+				System.out.println("This is 3");
+		}
+		
+	}
+
+}

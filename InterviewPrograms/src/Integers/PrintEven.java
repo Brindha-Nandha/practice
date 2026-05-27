@@ -1,0 +1,54 @@
+package Integers;
+
+import java.util.Scanner;
+
+public class PrintEven {
+public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter the number");
+	int n = sc.nextInt();
+	while(n<1) {
+	
+	System.out.println("The number is : "+n);
+	System.out.println("The number is lesser than. Try with positive integer");
+		n = sc.nextInt();
+	
+	}
+	
+	for (int i=1; i<=n;i++) {
+		
+		if(i%10==0) {
+			continue;
+		}
+		else if(i>100){
+			break;
+		}
+		else {
+			System.out.print(i + " ");
+		}
+		}
+
+	}
+}
+	
+//	System.out.println("The numbers using for loop");
+//	for(int i=1;i<=n;i++) {
+//		System.out.print( i + " ");
+//	}
+//	System.out.println();
+//	System.out.println("The numbers using while loop");
+//	int a=1;
+//	while(a<=n) {
+//		System.out.print(a + " ");
+//		a++;
+//	}
+//	System.out.println();
+//	System.out.println("The numbers using do..while loop");
+//	int b = 1;
+//	do {
+//		System.out.print(b + " ");
+//		b++;
+//	}while(b<=n);
+	
+	
+

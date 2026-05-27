@@ -1,0 +1,26 @@
+package stringpackage;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class CountOfCharacter {
+
+	public static void main(String[] args) {
+		String s = "May God bless you";
+		Map<Character,Integer> map = new HashMap<>();
+		
+		int i=0;
+		while(i<=s.length()) {
+			char current=s.charAt(i);
+			if(map.containsKey(current)) {
+				map.put(current, map.get(current));
+			}
+			else {
+				map.put(current, 1);
+			}
+			i++;
+		}
+		System.out.println(map);
+	}
+
+}

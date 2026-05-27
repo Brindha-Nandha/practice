@@ -1,0 +1,29 @@
+package Integers;
+
+public class LoopBased {
+
+	public static void main(String[] args) {
+		
+		int sum=0;
+		// Print numbers from 1 to n
+		for (int i = 1; i <= 5; i++) {
+			System.out.print(i + " ");
+		}
+		
+		System.out.println();
+		
+		// Print numbers from n to 1
+		for (int i = 5; i >= 1; i--) {
+			System.out.print(i + " ");
+		}
+		
+		// Find the sum of numbers from 1 to n
+		for (int i = 5; i >= 1; i--) {
+			sum+=i;
+			
+		}
+		System.out.println("Sum of numbers from 1 to 5 is : "+ sum);		
+
+	}
+
+}

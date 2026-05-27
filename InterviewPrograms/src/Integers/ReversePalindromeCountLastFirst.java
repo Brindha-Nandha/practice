@@ -1,0 +1,51 @@
+package Integers;
+
+import java.util.Scanner;
+
+public class ReversePalindromeCountLastFirst {
+	int num,sum;
+	public int reverse(int n) {
+		int num = n;
+		int a=0,i=0;
+		while(num>0) {
+			a=num%10;
+			sum = sum*10 + a;
+			num=num/10;
+			i++;
+		}
+		System.out.println(n + " is a " + i + " digit number");
+		
+		return sum;
+	}
+	public String palindrome(int original, int reversed) {
+		if (original==reversed) {
+			return "Yes";
+		}
+		else {return "No";
+		}
+	}
+	
+	public void firstDigit(int n) {
+		while(n>=10) {
+			n=n/10;
+		}
+		System.out.println("The first digit is : "+ n);
+	}
+	
+	public void lastDigit(int n) {
+		System.out.println("The last digit is : "+ n%10);
+	}
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the n");
+		int n = sc.nextInt();
+		ReversePalindromeCountLastFirst r = new ReversePalindromeCountLastFirst();
+		int reverse = r.reverse(n);
+		String palin = r.palindrome(n,reverse);
+		System.out.println(n + " is reversed as " + reverse + " which is palindrome or not : " + palin);
+		r.firstDigit(n);
+		r.lastDigit(n);
+	}
+
+}

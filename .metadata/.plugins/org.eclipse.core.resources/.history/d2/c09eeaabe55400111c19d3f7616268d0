@@ -1,0 +1,41 @@
+package eventListeners;
+
+import org.testng.ITestContext;
+import org.testng.ITestListener;
+import org.testng.ITestResult;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
+
+public class EventListenerManager implements ITestListener{
+
+	public ExtentSparkReporter sparkreporter;
+	public ExtentReports reports;
+	public ExtentTest test;
+	
+	public void onTestStart(ITestResult result) {
+		sparkreporter = new ExtentSparkReporter(System.getProperty("user.dir")+"extenet-report.myreport.html");
+		sparkreporter.config().setDocumentTitle("Automation report");
+		sparkreporter.config().setTheme(Theme.STANDARD);
+		
+		reports=new ExtentReports();
+		reports.attachReporter(sparkreporter);
+		reports.setSystemInfo("Name", "Brindha");
+	}
+	
+	 public void onTestSuccess(ITestResult result) {
+		 test=reports.createTest(result.getName());
+		 test.log(Status.PASS, "Test name :" + result.getName()+ "is passed");
+		 
+	 }
+	 public void onTestFailure(ITestResult result) {
+		 test=reports.createTest(result.getName());
+		 test.log(Status.FAIL, "Test name :" + result.getName()+ "is failed" + result.getThrowable());	 
+	 
+	 }
+	
+}
+

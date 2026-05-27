@@ -1,0 +1,37 @@
+package Integers;
+
+import java.util.Scanner;
+
+public class ReversePalindromeCountLastFirst {
+	int num;
+	public int reverse(int n) {
+		int num = n;
+		int sum=0,a=0,i=0;
+		while(num>0) {
+			a=num%10;
+			sum = sum*10 + a;
+			num=num/10;
+			i++;
+		}
+		System.out.println(n + " is a " + i + " digit number");
+		
+		return sum;
+	}
+	public String palindrome(int n) {
+		if (num==n) {
+			return "Yes";
+		}
+		else return "No";
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the n");
+		int n = sc.nextInt();
+		ReversePalindromeCountLastFirst r = new ReversePalindromeCountLastFirst();
+		int reverse = r.reverse(n);
+		String palin = r.palindrome(reverse);
+		System.out.println(n + "is reversed as " + reverse + " which is palindrome or not : " + palin);
+		
+	}
+
+}

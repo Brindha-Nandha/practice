@@ -1,0 +1,26 @@
+package com.google.gmail;
+
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class WindowHandles {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://opensource-demo.orangehrmlive.com/");
+		System.out.println(driver.getWindowHandle());
+		Thread thread = new Thread();
+		thread.wait(3000);
+		WebElement link = driver.findElement(By.linkText("OrangeHRM, Inc"));
+		link.click();
+		Set<String> windows = driver.getWindowHandles();
+		System.out.println(windows);
+	}
+
+}

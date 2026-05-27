@@ -1,0 +1,16 @@
+package Integers;
+
+public class PerfectSquare {
+
+	public static void main(String[] args) {
+		double n = 256;
+		double s = Math.sqrt(n);
+		if((s*s)==n) {
+			System.out.println(n+ " is a perfect square");
+		}
+		else {
+			System.out.println(n + " is not a perfect square");
+		}
+	}
+
+}
